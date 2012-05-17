@@ -35,6 +35,7 @@ class Controller_Page extends Controller_Template {
 		// Если найдена, то рендерим шаблон для нее
 		if ( $this->page !== NULL )
 		{
+			$this->page->setActive();
 			$this->auto_render = TRUE;
 
 			// Указываем, нужна ли авторизация и для каких ролей доступен

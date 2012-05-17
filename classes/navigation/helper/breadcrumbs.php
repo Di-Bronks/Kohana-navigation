@@ -185,7 +185,12 @@ class Navigation_Helper_Breadcrumbs
             $container = $this->getContainer();
         }	
 
-        $active = Context::instance()->page;
+        $active = $container->findBy('active', TRUE);
+		
+		if (!$active)
+		{
+			return '';
+		}
 
         // put the deepest active page last in breadcrumbs
         if ($this->getLinkLast()) 
